@@ -51,6 +51,11 @@ public class DynamoDBSessionStore extends StoreBase {
     }
 
     @Override
+    public void processExpires() {
+        // do nothing, because the expired sessions are handled by using either TTL or reaper
+    }
+
+    @Override
     public String getStoreName() {
         return name;
     }
